@@ -1,6 +1,42 @@
 #+title: RCOS Presto Information
 #+author: Nikhil Panickssery
 # ---------------------------
-* Set-up information
+Welcome to PrestoDB! This document has been created by students, for students,
+to help you navigate the process of contributing to PrestoDB - a powerful
+distributed SQL query engine for big data analytics.
+
+PrestoDB (often just Presto) is an open source, distributed SQL query
+engine designed to efficiently query large datasets across multiple data
+sources. Originally developed at Facebook in 2012, Presto has grown into a
+large open source project used by companies like Airbnb, Meta, and Uber to
+power their data analytics infrastructure.
+
+PrestoDB is a good choice for students that are interested in:
+
+- Gaining practical experience working with a production-grade system
+- Developing skills in Java programming (or reading!) or SQL optimization
+- Building a portfolio of meaningful open source contributions to larger
+  repositories
+
+* Getting started
+To get a better grasp of where Presto lies in the ecosystem of database
+technologies, I recommend doing some reading on how databases are structured,
+including traditional SQL databases, NoSQL databases, and modern data lakes.
+Seeing how varied these can be and then how Presto unifies support for them
+is a bit of an eye-opener. I also recommend reading on data federation to
+learn about some of Presto's specific skills, as well as on different table
+formats (this will help you better understand what some connectors are
+actually "connecting" to).
+
+Provided as well is a document title "Presto: SQL on Everything" that goes
+into some more detail on the underlying architecture of Presto.
+
+** System configuration
+The [[https://github.com/prestodb/presto][Presto github page]] provides good information on how to build and
+Presto and configure IntelliJ IDEA (which you should have access to as
+a student).
+
+I personally had some issue getting set up at first and ended up building
+it inside an Ubuntu docker container (TODO: include this in repo).
 
 * Notes
