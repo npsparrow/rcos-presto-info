@@ -28,8 +28,25 @@ learn about some of Presto's specific skills, as well as on different table
 formats (this will help you better understand what some connectors are
 actually "connecting" to).
 
-Provided as well is a document title "Presto: SQL on Everything" that goes
-into some more detail on the underlying architecture of Presto.
+Listed below are documents linked to us by our IBM mentor to help us understand
+more about Presto, listed in order from most to least important:
+
+1. "[[https://trino.io/Presto_SQL_on_Everything.pdf][Presto: SQL on Everything]]" - The original paper. Gives a high level overview
+   of the system architecture and why it was built.
+
+2. "[[https://dl.acm.org/doi/pdf/10.1145/3589769?casa_token=7e61hsPyjFoAAAAA:dOIyS3ebeV5MzWxncElsjyc9Of8T2sycMHXoG0okELsEjRw4QrDDpNRgv5-ABQ_F0EtoK5zXiIQ1][Presto: A decade of SQL analytics at Meta]]": This paper talks about some of
+the lessons learned running a large scale SQL analytics system.
+
+3. "[[https://dl.acm.org/doi/pdf/10.14778/3685800.3685828?casa_token=mDEpoTyi3xgAAAAA:i8zckmAgf-n28bDfor6JpnoqiZTn_mW9LD3FcmIw1iHYUmIcBT9ll8EO9HIVWQhpOF9-SHX8LliQ][Presto's History-based query optimizer]]": Not as necessary to read, but
+talks about a special query optimizer recently implemented at Meta and
+Uber. Definitely read if you're interested in SQL query
+optimizers.
+
+4. "[[https://dl.acm.org/doi/pdf/10.1145/3448016.3457552?casa_token=wFRmKGxJKT0AAAAA:_vaJkP2aZbuPA7dJrgj8aa25V56Q0Yc0MVrTUt4yw-N8h9L9zziE6FEzwKXzwpKXSXUYH5h_DHm_][Real-time Data Infrastructure at Uber]]": This one gives a high level
+overview of Uber's entire data infrastructure. The bits on Presto might give you
+a good idea of how it used and where it fits in a company's analytics
+stack. Good for understanding real-world use
+cases.
 
 ** System configuration
 The [[https://github.com/prestodb/presto][Presto github page]] provides good information on how to build and
@@ -39,4 +56,24 @@ a student).
 I personally had some issue getting set up at first and ended up building
 it inside an Ubuntu docker container (TODO: include this in repo).
 
-* Notes
+* Common challenges and solutions
+In IntelliJ, project setup can be confusing; multiple people mixed up VM
+options and program arguments. In the Community Edition, you need to
+[[https://stackoverflow.com/questions/50938383/how-to-set-jvm-arguments-in-intellij-idea][click a few extra buttons]] to make VM options appear.
+
+Another frequent issue we had while setting up the environments was having
+an improperly configured Java SDK. In IntelliJ, there are multiple locations
+for Java configuration. This is addressed on the Presto github page, but often
+there were additional settings we had to make sure were set for Presto to run.
+The most common fix was to go into Preferences -> Java Compiler -> Project
+bytecode version and set this to 1.8. If this doesn't work, try looking up
+how other people set their Java versions and see what you've done.
+
+If you don't know how to install Java 8 on your own machine at all, install
+[[https://sdkman.io/][sdkman]] and then install Java 8 through that, like:
+
+#+begin_src bash
+sdk install java 8.0.442-amzn
+#+end_src
+
+* Communication channels
