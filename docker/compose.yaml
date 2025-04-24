@@ -1,0 +1,14 @@
+services:
+  presto-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ubuntu-presto
+    container_name: presto-dev
+    volumes:
+      - /path/to/workspace:/workspace  # Update the first path to your actual local workspace
+      # - /path/to/local/maven/repo:/home/developer/.m2/repository
+    tty: true  
+    stdin_open: true  
+    working_dir: /workspace
+    command: zsh

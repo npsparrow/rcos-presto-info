@@ -54,7 +54,28 @@ Presto and configure IntelliJ IDEA (which you should have access to as
 a student).
 
 I personally had some issue getting set up at first and ended up building
-it inside an Ubuntu docker container (TODO: include this in repo).
+it inside an Ubuntu docker container. For the purposes of this page, I have
+adjusted it to use Docker Compose for ease of use. If you'd like to use it,
+simply make sure you have Docker and Docker Compose installed on your
+system and have updated the volume mapping in the =compose.yaml= (line 9).
+Then, to build the image for the first time and start the container:
+
+#+begin_src bash
+docker compose up --build
+#+end_src
+
+Later, to start an interactive shell session:
+
+#+begin_src bash
+docker compose run --rm presto-dev
+#+end_src
+
+This docker container is suitable for building PrestoDB. If you want to later
+be able to run IntelliJ on your computer, you will need to uncomment the second line
+of volume section in =compose.yaml=, and update the first path with the path
+to your local Maven repository. On Linux, this is probably located in
+=~/.m2/repository/=. For other systems, I wouldn't know; I'm sure you can find out
+online or by asking an instructor familiar with Maven.
 
 * Common challenges and solutions
 In IntelliJ, project setup can be confusing; multiple people mixed up VM
